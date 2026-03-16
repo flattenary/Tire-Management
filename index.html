@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tire Showroom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>"/>
+</head>
+<body>
+
+    <!-- Loading Overlay -->
+    <div id="loading" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Error State -->
+    <div id="error-screen" class="hidden error-screen">
+        <span class="material-symbols-outlined error-icon">error_outline</span>
+        <h2 id="error-title">Page Not Found</h2>
+        <p id="error-message">We couldn't load the requested showroom.</p>
+    </div>
+
+    <!-- Main App UI -->
+    <div id="app" class="hidden">
+
+        <!-- Hero -->
+        <header class="hero">
+            <div class="container hero-content">
+                <div class="profile-section">
+                    <img id="user-logo"
+                         src="https://ui-avatars.com/api/?name=T&background=1d4ed8&color=fff&size=128&bold=true"
+                         alt="Logo"
+                         class="user-logo">
+                    <div class="user-info">
+                        <h1 id="user-name">Loading...</h1>
+                        <div class="user-meta">
+                            <p class="user-location hidden" id="user-location-container">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <a id="user-location" href="#" target="_blank" rel="noopener"></a>
+                            </p>
+                            <p class="user-phone hidden" id="user-phone-container">
+                                <span class="material-symbols-outlined">call</span>
+                                <a id="user-phone" href="#"></a>
+                            </p>
+                        </div>
+                        <div class="contact-actions hidden" id="contact-actions">
+                            <a id="whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn-whatsapp">
+                                <span class="material-symbols-outlined">chat</span>
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Banner -->
+        <div class="container">
+            <div class="stats-banner">
+                <div class="stats-icon">
+                    <span class="material-symbols-outlined">tire_repair</span>
+                </div>
+                <div class="stats-text">
+                    <span id="tire-count">0</span>
+                    <p>Tires Available in Stock</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tires Grid -->
+        <main class="container main-content">
+            <div class="section-header">
+                <div class="header-left">
+                    <h2>Available Inventory</h2>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <span class="material-symbols-outlined search-icon">search</span>
+                        <input type="text" id="tire-search" placeholder="Search tires (e.g. 225, Michelin...)" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="tires-grid" class="tires-grid"></div>
+
+            <div id="empty-state" class="hidden empty-state">
+                <span class="material-symbols-outlined empty-icon">inventory_2</span>
+                <h3>No tires in stock</h3>
+                <p>Check back later for available tires.</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by Tire Manager</p>
+        </footer>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
